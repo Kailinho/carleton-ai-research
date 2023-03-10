@@ -3,15 +3,21 @@ import React from "react"
 const Search = () => {
 	return (
 		<>
-			<div class="flex items-center justify-center gap-8 ">
-				<div class="flex items-center justify-center gap-x-6 lg:mt-6">
-					<div className=" cursor-pointer  rounded-xl bg-red-200 px-10 py-4">
+			<div class="mx-auto flex w-full max-w-[720px] items-center justify-center gap-20 px-4 text-gray-600 lg:max-w-[1236px] ">
+				<div>
+					<h2 class=" text-3xl font-bold">
+						Meet our
+						<span class="text-red-600"> Researchers</span>
+					</h2>
+				</div>
+				<div class="flex items-center justify-center gap-x-6 ">
+					<div className="relative cursor-pointer rounded-xl bg-red-200 px-6 py-4">
 						<div class="text-sm font-semibold leading-6 text-red-600">
 							<span
 								aria-hidden="true"
 								className="flex items-center justify-between gap-2"
 							>
-								<div>
+								<div className="absolute left-0 ml-4">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
@@ -27,7 +33,7 @@ const Search = () => {
 										/>
 									</svg>
 								</div>
-								<div>
+								<div className=" ml-12 justify-end text-lg font-semibold">
 									<p>Filter</p>
 								</div>
 							</span>
