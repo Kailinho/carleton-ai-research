@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react"
 import Search from "./Search"
 import getData from "../firebase"
@@ -30,7 +31,7 @@ const Cards = () => {
 			<Search onSearch={handleSearch} />
 			<div className="container my-12 mx-auto w-full max-w-[720px] px-6 pb-40 font-serif  text-gray-600 lg:max-w-[1236px]">
 				<section className="mb-32 text-center text-gray-800">
-					<div className="mt-40 grid gap-x-6 md:grid-cols-3 lg:gap-x-12 lg:gap-y-24">
+					<div className="mt-40 grid gap-x-6 md:grid-cols-3 md:gap-y-24 lg:gap-x-12">
 						{filteredData.map((item) => (
 							<div key={item.name} className="mb-24 md:mb-0">
 								<div className="block h-full rounded-lg bg-white shadow-lg">

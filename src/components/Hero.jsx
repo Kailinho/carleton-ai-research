@@ -16,11 +16,13 @@ const Hero = () => {
 						</div>
 						<div className="flex flex-col items-center text-center lg:w-1/2 lg:flex-grow lg:items-start lg:pl-24 lg:text-left">
 							<h1 className="mb-4 text-xl font-semibold  text-gray-900 sm:text-4xl">
-								Carleton University AI Research
+								Carleton Interdisciplinary Ethical AI Research
 							</h1>
 							<p className="mb-8 text-xl leading-relaxed">
-								Creating the next big thing in Artificial
-								Intelligence.
+								The Carleton Interdisciplinary Ethical AI
+								Research (CIE-AIR) aims to connect AI
+								researchers at Carleton with problem owners for
+								sustainable development of Ethical AI.
 							</p>
 						</div>
 					</div>

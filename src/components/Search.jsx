@@ -7,13 +7,13 @@ const Search = (props) => {
 
 	return (
 		<>
+			<div className="py-12">
+				<h2 class="text-center text-3xl font-semibold">
+					Meet our
+					<span class="text-red-600"> Researchers</span>
+				</h2>
+			</div>
 			<div class="mx-auto flex w-full max-w-[720px] items-center justify-center gap-20 px-4 text-gray-600 lg:max-w-[1236px] ">
-				<div>
-					<h2 class=" text-3xl font-bold">
-						Meet our
-						<span class="text-red-600"> Researchers</span>
-					</h2>
-				</div>
 				<div class="flex items-center justify-center gap-x-6 ">
 					<div className="relative cursor-pointer rounded-xl bg-red-200 px-6 py-4">
 						<div class="text-sm font-semibold leading-6 text-red-600">
@@ -47,15 +47,12 @@ const Search = (props) => {
 						<div class="relative bg-transparent text-lg text-gray-800">
 							<div class="flex items-center border-b-2 border-red-500 py-2">
 								<input
-									class="mr-3 border-none bg-transparent px-2 leading-tight focus:outline-none"
+									class="mr-3 w-[300px] border-none bg-transparent px-2 leading-tight focus:outline-none"
 									type="text"
 									onChange={handleInputChange}
 									placeholder="Search"
 								/>
-								<button
-									type="submit"
-									class="absolute right-0 top-0 mt-3 mr-4"
-								>
+								<button class="absolute right-0 top-0 mt-3 mr-4">
 									<svg
 										class="h-4 w-4 fill-current"
 										xmlns="http://www.w3.org/2000/svg"

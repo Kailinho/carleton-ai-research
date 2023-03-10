@@ -5,7 +5,7 @@ import logo from "../assets/logo.png"
 const Navbar = () => {
 	return (
 		<>
-			<div className="mx-auto w-full max-w-[1236px]">
+			<div className="mx-auto max-w-[1236px]">
 				<div className="mx-auto flex h-32 w-full items-center justify-between px-24 font-serif ">
 					{/* bg-logo bg-no-repeat bg-contain  */}
 
@@ -18,14 +18,14 @@ const Navbar = () => {
 						<img src={logo} className="h-full w-full" alt="" />
 					</a>
 
-					<div className="hidden flex-none items-center text-xl font-semibold text-[#293241] lg:flex ">
+					<div className="hidden flex-none items-center text-lg font-semibold text-[#293241] xl:flex ">
 						<ul className="menu menu-horizontal ">
 							<li>
 								<a
 									href="https://carleton.ca/campus/"
 									target={"_blank"}
 								>
-									Campus
+									Faculty
 								</a>
 							</li>
 							<li>
@@ -41,7 +41,7 @@ const Navbar = () => {
 									href="https://carleton.ca/prospective"
 									target={"_blank"}
 								>
-									Admissions
+									Projects
 								</a>
 							</li>
 							<li>
@@ -49,12 +49,12 @@ const Navbar = () => {
 									href="https://carleton.ca/about/"
 									target={"_blank"}
 								>
-									About
+									Courses
 								</a>
 							</li>
 						</ul>
 					</div>
-					<div className="inline-flex w-16 items-center justify-center lg:hidden">
+					<div className="inline-flex w-16 items-center justify-center xl:hidden">
 						<button className=" h-full w-full">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
