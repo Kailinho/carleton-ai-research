@@ -1,6 +1,10 @@
 import React from "react"
 
-const Search = () => {
+const Search = (props) => {
+	const handleInputChange = (event) => {
+		props.onSearch(event.target.value)
+	}
+
 	return (
 		<>
 			<div class="mx-auto flex w-full max-w-[720px] items-center justify-center gap-20 px-4 text-gray-600 lg:max-w-[1236px] ">
@@ -39,12 +43,13 @@ const Search = () => {
 							</span>
 						</div>
 					</div>
-					<div className="cursor-pointer  ">
+					<div>
 						<div class="relative bg-transparent text-lg text-gray-800">
 							<div class="flex items-center border-b-2 border-red-500 py-2">
 								<input
 									class="mr-3 border-none bg-transparent px-2 leading-tight focus:outline-none"
 									type="text"
+									onChange={handleInputChange}
 									placeholder="Search"
 								/>
 								<button
