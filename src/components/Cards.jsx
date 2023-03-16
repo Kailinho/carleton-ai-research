@@ -54,43 +54,6 @@ const Cards = () => {
 								</div>
 							</div>
 						))}
-
-						{/* <div class="mb-24 md:mb-0">
-							<div class="block h-full rounded-lg bg-white shadow-lg">
-								<div class="flex justify-center">
-									<div class="mt-[-75px] flex justify-center">
-										<img
-											src={pic}
-											class="mx-auto w-[150px] rounded-full shadow-lg"
-											alt="Researcher"
-										/>
-									</div>
-								</div>
-								<div class="flex flex-col gap-4 p-6">
-									<h5 class=" text-lg font-bold">Name</h5>
-									<p class="">Full-time Professor</p>
-									<p>Department</p>
-								</div>
-							</div>
-						</div>
-						<div class="mb-24 md:mb-0">
-							<div class="block h-full rounded-lg bg-white shadow-lg">
-								<div class="flex justify-center">
-									<div class="mt-[-75px] flex justify-center">
-										<img
-											src={pic}
-											class="mx-auto w-[150px] rounded-full shadow-lg"
-											alt="Researcher"
-										/>
-									</div>
-								</div>
-								<div class="flex flex-col gap-4 p-6">
-									<h5 class=" text-lg font-bold">Name</h5>
-									<p class="">Full-time Professor</p>
-									<p>Department</p>
-								</div>
-							</div>
-						</div> */}
 					</div>
 				</section>
 			</div>

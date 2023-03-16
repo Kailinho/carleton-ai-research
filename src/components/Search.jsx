@@ -7,7 +7,7 @@ const Search = (props) => {
 
 	return (
 		<>
-			<div className="py-12">
+			<div className="pb-12 pt-8">
 				<h2 class="text-center text-3xl font-semibold">
 					Meet our
 					<span class="text-red-600"> Researchers</span>
@@ -37,8 +37,8 @@ const Search = (props) => {
 										/>
 									</svg>
 								</div>
-								<div className=" ml-12 justify-end text-lg font-semibold">
-									<p>Filter</p>
+								<div className=" ml-12 text-lg font-semibold tracking-wide">
+									<p>Show Filters</p>
 								</div>
 							</span>
 						</div>
