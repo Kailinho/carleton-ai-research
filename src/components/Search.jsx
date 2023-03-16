@@ -10,7 +10,7 @@ const Search = (props) => {
 			<div className="pb-12 pt-8">
 				<h2 class="text-center text-3xl font-semibold">
 					Meet our
-					<span class="text-red-600"> Researchers</span>
+					<span class="text-red-600">Researchers</span>
 				</h2>
 			</div>
 			<div class="mx-auto flex w-full max-w-[720px] items-center justify-center gap-20 px-4 text-gray-600 lg:max-w-[1236px] ">
