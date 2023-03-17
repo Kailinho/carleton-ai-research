@@ -8,49 +8,21 @@ const Search = (props) => {
 	return (
 		<>
 			<div className="pb-12 pt-8">
-				<h2 class="text-center text-3xl font-semibold">
+				<h2 class="text-center text-3xl text-[#353535] font-semibold">
 					Meet our
-					<span class="text-red-600"> Researchers</span>
+					<span class="text-[#3C6E71] font-bold "> Researchers</span>
 				</h2>
 			</div>
-			<div class="mx-auto flex w-full max-w-[720px] items-center justify-center gap-20 px-4 text-gray-600 lg:max-w-[1236px] ">
+			<div class="mx-auto flex max-w-[720px] justify-center text-[#353535] lg:max-w-[1236px] ">
 				<div class="flex items-center justify-center gap-x-6 ">
-					<div className="relative cursor-pointer rounded-xl bg-red-200 px-6 py-4">
-						<div class="text-sm font-semibold leading-6 text-red-600">
-							<span
-								aria-hidden="true"
-								className="flex items-center justify-between gap-2"
-							>
-								<div className="absolute left-0 ml-4">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="h-6 w-6"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-										/>
-									</svg>
-								</div>
-								<div className=" ml-12 text-lg font-semibold tracking-wide">
-									<p>Show Filters</p>
-								</div>
-							</span>
-						</div>
-					</div>
 					<div>
-						<div class="relative bg-transparent text-lg text-gray-800">
-							<div class="flex items-center border-b-2 border-red-500 py-2">
+						<div class="relative bg-transparent text-lg w-[500px] ">
+							<div class="flex items-center border-b-2 text-[#353535] border-[#3C6E71] py-2">
 								<input
-									class="mr-3 w-[300px] border-none bg-transparent px-2 leading-tight focus:outline-none"
+									class="mr-3 w-[450px] border-none font-semibold placeholder-[rgba(53,53,53,0.6)] bg-transparent px-2 leading-tight focus:outline-none"
 									type="text"
 									onChange={handleInputChange}
-									placeholder="Search"
+									placeholder="Machine Learning, Robotics, Medical..."
 								/>
 								<button class="absolute right-0 top-0 mt-3 mr-4">
 									<svg

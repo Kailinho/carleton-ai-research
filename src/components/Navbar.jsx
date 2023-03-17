@@ -5,10 +5,8 @@ import logo from "../assets/logo.png"
 const Navbar = () => {
 	return (
 		<>
-			<div className="mx-auto max-w-[1236px]">
-				<div className="mx-auto flex h-32 w-full items-center justify-between px-24 font-serif ">
-					{/* bg-logo bg-no-repeat bg-contain  */}
-
+			<div className="mx-auto max-w-[1236px] text-[#284B63]">
+				<div className="mx-auto flex h-32 w-full items-center justify-between px-16 font-serif ">
 					<a
 						href="https://carleton.ca"
 						target="_blank"
@@ -18,10 +16,10 @@ const Navbar = () => {
 						<img src={logo} className="h-full w-full" alt="" />
 					</a>
 
-					<div className="hidden flex-none items-center text-lg font-semibold text-[#293241] xl:flex ">
+					<div className="hidden flex-none items-center text-lg font-semibold xl:flex ">
 						<ul className="menu menu-horizontal ">
 							<li>
-								<a
+								<a className='border-b-2 border-transparent hover:border-[#3C6E71]'
 									href="https://carleton.ca/campus/"
 									target={"_blank"}
 								>
@@ -29,7 +27,7 @@ const Navbar = () => {
 								</a>
 							</li>
 							<li>
-								<a
+								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
 									href="https://research.carleton.ca"
 									target={"_blank"}
 								>
@@ -37,19 +35,19 @@ const Navbar = () => {
 								</a>
 							</li>
 							<li>
-								<a
-									href="https://carleton.ca/prospective"
-									target={"_blank"}
-								>
-									Projects
-								</a>
-							</li>
-							<li>
-								<a
+								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
 									href="https://carleton.ca/about/"
 									target={"_blank"}
 								>
 									Courses
+								</a>
+							</li>
+							<li>
+								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
+									href="https://carleton.ca/prospective"
+									target={"_blank"}
+								>
+									Projects
 								</a>
 							</li>
 						</ul>
@@ -61,7 +59,7 @@ const Navbar = () => {
 								viewBox="0 0 24 24"
 								stroke-width="1.5"
 								stroke="currentColor"
-								className={"stroke-red-500"}
+								className={"stroke-[#284B63"}
 							>
 								<path
 									stroke-linecap="round"
