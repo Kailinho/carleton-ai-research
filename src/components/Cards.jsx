@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react"
 import Search from "./Search"
 import getData from "../firebase"
+import profile from "../assets/profile.jpg"
 
 const Cards = () => {
 	const [data, setData] = useState(null)
@@ -38,14 +39,14 @@ const Cards = () => {
 									<div className="flex justify-center">
 										<div className="p-5 lg:py-5 flex justify-center">
 											<img
-												src={item.picture}
+												src={item.picture || profile}
 												className="mx-auto w-[150px] shadow-lg"
 												alt="Researcher"
 											/>
 										</div>
 									</div>
 									<div className="flex text-left flex-col gap-5 lg:gap-[12px] pl-20 lg:p-6">
-										<a href={item.url} target="_blank" className="text-xl cursor-pointer font-bold hover:opacity-90" rel="noreferrer">{item.name}</a>
+										<a href={item.url} target="_blank" className="text-xl cursor-pointer font-bold hover:opacity-80" rel="noreferrer">{item.name}</a>
 										<p className="text-sm">{item.title}</p>
 										<p className="text-sm">{item.department}</p>
 									</div>
