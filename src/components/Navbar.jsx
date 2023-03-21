@@ -66,16 +66,16 @@ export default function NavBar() {
                     >
                         <ul className="justify-center text-lg  text-center font-semibold space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Faculty</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">People</a>
                             </li>
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Research</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://https://research.carleton.ca">Research</a>
                             </li>
                             <li >
                                 <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Courses</a>
                             </li>
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Project</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Contact</a>
                             </li>
                         </ul>
                     </div>
