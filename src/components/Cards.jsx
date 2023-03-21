@@ -32,7 +32,7 @@ const Cards = () => {
 			<Search onSearch={handleSearch} />
 			<div className="container mx-auto max-w-[720px] px-6 font-serif pb-20 text-[#284B63] lg:max-w-[1236px]">
 				<section className="text-center text-[#284B63]">
-					<div className="mt-20 grid gap-x-6 lg:grid-cols-3 md:gap-y-24 lg:gap-x-12">
+					<div className="mt-12 grid gap-x-6 lg:grid-cols-3 md:gap-y-24 lg:gap-x-12">
 						{filteredData.map((item) => (
 							<div key={item.name} className="mb-24 md:mb-0">
 								<div className="lg:block border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">

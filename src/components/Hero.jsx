@@ -6,7 +6,7 @@ const Hero = () => {
 		<>
 			<main className="scroll-smooth text-[#284B63]">
 				<section className="mx-auto w-full max-w-[720px] px-4 font-serif  lg:max-w-[1236px] ">
-					<div className="container mx-auto flex flex-col-reverse items-center px-5 pt-10 pb-10 lg:flex-row">
+					<div className="container mx-auto flex flex-col-reverse items-center pt-10 pb-10 lg:flex-row">
 						<div className="mb-10 w-full  lg:mb-0 lg:w-1/2 lg:max-w-2xl">
 							<img
 								className=" rounded-lg object-cover object-center"

@@ -1,78 +1,86 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react"
 import logo from "../assets/logo.png"
+import { useState } from "react";
 
-const Navbar = () => {
-	return (
-		<>
-			<div className="mx-auto max-w-[1236px] text-[#284B63]">
-				<div className="mx-auto flex h-32 w-full items-center justify-between px-16 font-serif ">
-					<a
+
+export default function NavBar() {
+    const [navbar, setNavbar] = useState(false);
+
+    return (
+        <nav className="max-w-[720px] lg:max-w-[1236px] mx-auto font-serif text-[#284B63]">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-8">
+                <div >
+                    <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
+                    <a
 						href="https://carleton.ca"
 						target="_blank"
 						title="Carleton"
-						className="flex h-[60px] w-[240px] hover:cursor-pointer md:h-[80px] md:min-h-[80px] md:w-[320px] md:min-w-[320px]  "
+						className="flex h-[60px] w-[240px] hover:cursor-pointer lg:h-[80px] lg:min-h-[80px] lg:w-[320px] lg:min-w-[320px]  "
 					>
 						<img src={logo} className="h-full w-full" alt="" />
 					</a>
-
-					<div className="hidden flex-none items-center text-lg font-semibold xl:flex ">
-						<ul className="menu menu-horizontal ">
-							<li>
-								<a className='border-b-2 border-transparent hover:border-[#3C6E71]'
-									href="https://carleton.ca/campus/"
-									target={"_blank"}
-								>
-									Faculty
-								</a>
-							</li>
-							<li>
-								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
-									href="https://research.carleton.ca"
-									target={"_blank"}
-								>
-									Research
-								</a>
-							</li>
-							<li>
-								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
-									href="https://carleton.ca/about/"
-									target={"_blank"}
-								>
-									Courses
-								</a>
-							</li>
-							<li>
-								<a	className='border-b-2 border-transparent hover:border-[#3C6E71]'
-									href="https://carleton.ca/prospective"
-									target={"_blank"}
-								>
-									Projects
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div className="inline-flex w-16 items-center justify-center xl:hidden">
-						<button className=" h-full w-full">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								className={"stroke-[#284B63"}
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-								/>
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-		</>
-	)
+                        <div className="lg:hidden">
+                            <button
+                                className="p-1 rounded-md outline-none"
+                                onClick={() => setNavbar(!navbar)}
+                            >
+                                {navbar ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-10 h-10"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-10 h-10"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        className={`flex-1 justify-self-center pb-3 lg:block lg:pb-0 lg:mt-0 ${
+                            navbar ? "block" : "hidden"
+                        }`}
+                    >
+                        <ul className="justify-center text-lg  text-center font-semibold space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
+                            <li >
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Faculty</a>
+                            </li>
+                            <li >
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Research</a>
+                            </li>
+                            <li >
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Courses</a>
+                            </li>
+                            <li >
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Project</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
 }
-
-export default Navbar

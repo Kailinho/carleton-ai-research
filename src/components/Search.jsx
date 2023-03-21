@@ -22,11 +22,11 @@ const Search = (props) => {
 									class="mr-3 w-[450px] border-none font-semibold placeholder-[rgba(53,53,53,0.6)] bg-transparent px-2 leading-tight focus:outline-none"
 									type="text"
 									onChange={handleInputChange}
-									placeholder="Machine Learning, Robotics, Medical..."
+									placeholder="Machine Learning, Robotics etc.."
 								/>
 								<button class="absolute right-0 top-0 mt-3 mr-4">
 									<svg
-										class="h-4 w-4 fill-current"
+										class="h-4 w-4 fill-[#3C6E71]"
 										xmlns="http://www.w3.org/2000/svg"
 										version="1.1"
 										id="Capa_1"
