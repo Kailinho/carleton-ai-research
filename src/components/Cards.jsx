@@ -32,21 +32,21 @@ const Cards = () => {
 			<Search onSearch={handleSearch} />
 			<div className="container mx-auto max-w-[720px] px-6 font-serif pb-20 text-[#284B63] lg:max-w-[1236px]">
 				<section className="text-center text-[#284B63]">
-					<div className="mt-12 grid gap-x-6 lg:grid-cols-3 md:gap-y-24 lg:gap-x-12">
+					<div className="mt-12 grid gap-6 lg:grid-cols-3 lg:gap-12">
 						{filteredData.map((item) => (
-							<div key={item.name} className="mb-24 md:mb-0">
+							<div key={item.name} className="max-w-[80vw] mx-auto md:mb-0">
 								<div className="lg:block border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">
 									<div className="flex justify-center">
-										<div className="p-5 lg:py-5 flex justify-center">
+										<div className="pr-5 sm:p-5 lg:py-5 flex justify-center">
 											<img
 												src={item.picture || profile}
-												className="mx-auto w-[150px] shadow-lg"
+												className="mx-auto min-w-[80px] w-[150px] shadow-lg"
 												alt="Researcher"
 											/>
 										</div>
 									</div>
-									<div className="flex text-left flex-col gap-5 lg:gap-[12px] pl-20 lg:p-6">
-										<a href={item.url} target="_blank" className="text-xl cursor-pointer font-bold hover:opacity-80" rel="noreferrer">{item.name}</a>
+									<div className="flex text-left flex-col gap-5 lg:gap-[12px] sm:pl-20 lg:p-6">
+										<a href={item.url} target="_blank" className="md:text-xl cursor-pointer font-bold hover:opacity-80" rel="noreferrer">{item.name}</a>
 										<p className="text-sm">{item.title}</p>
 										<p className="text-sm">{item.department}</p>
 									</div>

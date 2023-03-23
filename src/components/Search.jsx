@@ -16,7 +16,7 @@ const Search = (props) => {
 			<div class="mx-auto flex max-w-[720px] justify-center text-[#353535] lg:max-w-[1236px] ">
 				<div class="flex items-center justify-center gap-x-6 ">
 					<div>
-						<div class="relative bg-transparent text-lg w-[500px] ">
+						<div class="relative bg-transparent text-lg  w-[350px] sm:w-[500px] ">
 							<div class="flex items-center border-b-2 text-[#353535] border-[#3C6E71] py-2">
 								<input
 									class="mr-3 w-[450px] border-none font-semibold placeholder-[rgba(53,53,53,0.6)] bg-transparent px-2 leading-tight focus:outline-none"
