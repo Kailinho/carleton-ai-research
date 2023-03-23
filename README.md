@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Carleton Interdisciplinary Ethical AI Research
+A website to search for and find Researchers at Carleton university in your field of interest. Built using React and TailwindCSS.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is currently deplyed to [Render](https://carleton-ai-research.onrender.com).
 
 ## Available Scripts
 
