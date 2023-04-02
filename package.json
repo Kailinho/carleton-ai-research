@@ -9,6 +9,7 @@
     "daisyui": "^2.50.0",
     "firebase": "^9.17.2",
     "firebase-encode": "^0.0.5",
+    "fuse.js": "^6.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

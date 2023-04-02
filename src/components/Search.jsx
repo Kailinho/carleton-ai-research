@@ -24,9 +24,9 @@ const Search = (props) => {
 									onChange={handleInputChange}
 									placeholder="Machine Learning, Robotics etc.."
 								/>
-								<button class="absolute right-0 top-0 mt-3 mr-4">
+								<button class="absolute right-0 top-0 mt-[7px] mr-3">
 									<svg
-										class="h-4 w-4 fill-[#3C6E71]"
+										class="h-6 w-6 fill-[#3C6E71]"
 										xmlns="http://www.w3.org/2000/svg"
 										version="1.1"
 										id="Capa_1"

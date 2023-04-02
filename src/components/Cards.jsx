@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react"
 import Search from "./Search"
+import Fuse from 'fuse.js';
 import getData from "../firebase"
 import profile from "../assets/profile.jpg"
 
@@ -11,7 +12,7 @@ const Cards = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await getData("/") // <-- modify this line to your path
+			const result = await getData("/")
 			setData(result)
 			setFilteredData(result)
 		}
@@ -22,7 +23,8 @@ const Cards = () => {
 		setSearchString(searchString)
 		const filtered = data.filter((item) =>
 			((item.research && item.research['Research Interests']) && (item.research['Research Interests'].toLowerCase().includes(searchString.toLowerCase()))) ||
-			((item.research && item.research['Specific Research Interests']) && (item.research['Specific Research Interests'].toLowerCase().includes(searchString.toLowerCase())))
+			((item.research && item.research['Specific Research Interests']) && (item.research['Specific Research Interests'].toLowerCase().includes(searchString.toLowerCase()))) ||
+			((item.research && item.research['Current Research']) && (item.research['Current Research'].toLowerCase().includes(searchString.toLowerCase())))
 		)
 		setFilteredData(filtered)
 	}

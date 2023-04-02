@@ -9,7 +9,7 @@ const Hero = () => {
 					<div className="container mx-auto flex flex-col-reverse items-center pt-10 pb-10 lg:flex-row">
 						<div className="mb-10 w-full  lg:mb-0 lg:w-1/2 lg:max-w-2xl">
 							<img
-								className=" rounded-lg object-cover object-center"
+								className="rounded-md object-cover object-center"
 								alt="AI Research"
 								src={hero}
 							/>
