@@ -6,7 +6,7 @@ const Hero = () => {
 		<>
 			<main className="scroll-smooth text-[#284B63]">
 				<section className="mx-auto w-full max-w-[720px] px-4 font-serif  lg:max-w-[1236px] ">
-					<div className="container mx-auto flex flex-col-reverse items-center pt-10 pb-10 lg:flex-row">
+					<div className="container mx-auto flex flex-col-reverse items-center pt-10 lg:pb-10 lg:flex-row">
 						<div className="mb-10 w-full  lg:mb-0 lg:w-1/2 lg:max-w-2xl">
 							<img
 								className="rounded-md object-cover object-center"
@@ -18,7 +18,7 @@ const Hero = () => {
 							<h1 className="mb-4 text-xl font-semibold sm:text-4xl">
 								Carleton Interdisciplinary Ethical AI Research
 							</h1>
-							<p className="mb-8 text-xl text-[#353535] leading-relaxed">
+							<p className="mb-8 lg:text-xl text-[#353535] leading-relaxed">
 								The Carleton Interdisciplinary Ethical AI
 								Research (CIE-AIR) aims to connect
 								AI researchers at Carleton with problem owners 

@@ -7,7 +7,7 @@ const Search = (props) => {
 
 	return (
 		<>
-			<div className="py-8">
+			<div className="py-2">
 				<h2 class="text-center text-3xl text-[#353535] font-semibold">
 					Meet our
 					<span class="text-[#3C6E71] font-bold "> Researchers</span>
