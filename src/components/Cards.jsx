@@ -40,8 +40,8 @@ const Cards = () => {
 				<section className="text-center text-[#284B63]">
 					<div className="mt-12 grid lg:grid-cols-3 lg:gap-12">
 						{hasSearched ? ( filteredData.map((item) => (
-							<div key={item.name} className="max-w-[80vw] my-2 mx-auto md:mb-0">
-								<div className="lg:block w-[700px] max-w-[80vw] lg:w-[350px] border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">
+							<div key={item.name} className="my-2 mx-auto lg:mb-0">
+								<div className="lg:block w-[700px] max-w-[80vw] lg:w-[325px] border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">
 									<div className="flex justify-center">
 										<div className="pr-5 sm:p-5 lg:py-5 flex justify-center">
 											<img
