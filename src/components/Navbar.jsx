@@ -64,7 +64,7 @@ export default function NavBar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="justify-center text-lg  text-center font-semibold space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
+                        <ul className="justify-center text-lg text-center font-semibold space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
                             <li >
                                 <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">People</a>
                             </li>

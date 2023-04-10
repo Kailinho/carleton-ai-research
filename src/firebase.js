@@ -2,13 +2,13 @@ import firebase from "firebase/compat/app"
 import "firebase/compat/database"
 
 const firebaseConfig = {
-	apiKey: "AIzaSyC5exzq24a6zgMPRyrXg-LlIWz4eR-GmLs",
-	authDomain: "ai-website-ee5b5.firebaseapp.com",
+	apiKey: "AIzaSyCQ-ptwgriECFfZwHLEMz2wRX9LQOlQwW8",
+	authDomain: "cie-air.firebaseapp.com",
+	projectId: "cie-air",
 	dbURL: "https://ai-website-ee5b5-default-rtdb.firebaseio.com/",
-	projectId: "ai-website-ee5b5",
-	storageBucket: "ai-website-ee5b5.appspot.com",
-	messagingSenderId: "853656605284",
-	appId: "1:853656605284:web:e203150a58a4060a568571",
+	storageBucket: "cie-air.appspot.com",
+	messagingSenderId: "510902931789",
+	appId: "1:510902931789:web:15cfe0e60f3c3344aa6704"
 }
 
 // Initialize Firebase

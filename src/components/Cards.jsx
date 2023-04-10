@@ -9,35 +9,39 @@ const Cards = () => {
 	const [data, setData] = useState(null)
 	const [searchString, setSearchString] = useState("")
 	const [filteredData, setFilteredData] = useState([])
+	const [hasSearched, setHasSearched] = useState(false)
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await getData("/")
-			setData(result)
-			setFilteredData(result)
+			try {
+				const result = await getData("/")
+				setData(result)
+				setFilteredData(result)
+			} catch (error) {
+				console.error(error)
+			}
 		}
 		fetchData()
 	}, [])
 
 	const handleSearch = (searchString) => {
-		setSearchString(searchString)
-		const filtered = data.filter((item) =>
-			((item.research && item.research['Research Interests']) && (item.research['Research Interests'].toLowerCase().includes(searchString.toLowerCase()))) ||
-			((item.research && item.research['Specific Research Interests']) && (item.research['Specific Research Interests'].toLowerCase().includes(searchString.toLowerCase()))) ||
-			((item.research && item.research['Current Research']) && (item.research['Current Research'].toLowerCase().includes(searchString.toLowerCase())))
-		)
-		setFilteredData(filtered)
-	}
-
+		setSearchString(searchString);
+		const filtered = data.filter((item) => {
+		  return item.research_data && item.research_data.toLowerCase().includes(searchString.toLowerCase());
+		});
+		setFilteredData(filtered);
+		searchString ? setHasSearched(true) : setHasSearched(false)
+	  }
+	  
 	return (
 		<>
 			<Search onSearch={handleSearch} />
-			<div className="container mx-auto max-w-[720px] px-6 font-serif pb-20 text-[#284B63] lg:max-w-[1236px]">
+			<div className="container mx-auto  px-6 font-serif pb-20 text-[#284B63] lg:max-w-[1236px]">
 				<section className="text-center text-[#284B63]">
 					<div className="mt-12 grid gap-6 lg:grid-cols-3 lg:gap-12">
-						{filteredData.map((item) => (
-							<div key={item.name} className="max-w-[80vw] mx-auto md:mb-0">
-								<div className="lg:block border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">
+						{hasSearched ? ( filteredData.map((item) => (
+							<div key={item.name} className="max-w-[80vw]  my-6 mx-auto md:mb-0">
+								<div className="lg:block w-[700px] max-w-[80vw] lg:w-[350px] border-b-2 border-transparent hover:border-[#284B63] items-center flex p-6 h-full relative rounded-lg bg-white shadow-lg">
 									<div className="flex justify-center">
 										<div className="pr-5 sm:p-5 lg:py-5 flex justify-center">
 											<img
@@ -54,8 +58,9 @@ const Cards = () => {
 									</div>
 								</div>
 							</div>
-							
-						))}
+							))) : ( 
+								<h1 className="text-[#284B63] font-regular pt-12 w-[720px] lg:w-[1188px] text-4xl">Enter a search term to find relevant researchers.</h1>
+							)}
 					</div>
 				</section>
 			</div>
