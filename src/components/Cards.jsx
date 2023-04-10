@@ -58,9 +58,7 @@ const Cards = () => {
 									</div>
 								</div>
 							</div>
-							))) : ( 
-								<h1 className="text-[#284B63] font-regular pt-12 w-[720px] lg:w-[1188px] text-4xl">Enter a search term to find relevant researchers.</h1>
-							)}
+							))) : (null)}
 					</div>
 				</section>
 			</div>

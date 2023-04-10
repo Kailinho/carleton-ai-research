@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react"
 import logo from "../assets/logo.png"
 import { useState } from "react";
+import ComingSoon from './ComingSoon'
 
 
 export default function NavBar() {
@@ -66,16 +68,20 @@ export default function NavBar() {
                     >
                         <ul className="justify-center text-lg text-center font-semibold space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">People</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" 
+                                href="javascript:void(0)" onClick={() => alert("This page will be updated soon.")} >People</a>
                             </li>
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://https://research.carleton.ca">Research</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" 
+                                href="javascript:void(0)" onClick={() => alert("This page will be updated soon.")} >Research</a>
                             </li>
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Courses</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" 
+                                href="javascript:void(0)" onClick={() => alert("This page will be updated soon.")} >Courses</a>
                             </li>
                             <li >
-                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" href="https://google.com">Contact</a>
+                                <a className="border-b-2 border-transparent hover:border-[#3C6E71]" 
+                                href="javascript:void(0)" onClick={() => alert("This page will be updated soon.")} >About</a>
                             </li>
                         </ul>
                     </div>
