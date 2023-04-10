@@ -22,8 +22,8 @@ const Hero = () => {
 								The Carleton Interdisciplinary Ethical AI
 								Research (CIE-AIR) aims to connect
 								AI researchers at Carleton with problem owners 
-								for	sustainable development of Ethical AI. <br></br>
-								<span className='font-semibold'>Check out our search engine specialized to find AI-related faculty members at Carleton University.</span>
+								for	sustainable development of Ethical AI.
+								Check out our search engine specialized to find AI-related faculty members at Carleton University.
 							</p>
 
 						</div>

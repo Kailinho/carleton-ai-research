@@ -46,7 +46,7 @@ const Cards = () => {
 										<div className="pr-5 sm:p-5 lg:py-5 flex justify-center">
 											<img
 												src={item.picture || profile}
-												className="mx-auto min-w-[100px] w-[150px] shadow-lg"
+												className="mx-auto min-w-[100px] w-[150px] rounded-md shadow-lg"
 												alt="Researcher"
 											/>
 										</div>
