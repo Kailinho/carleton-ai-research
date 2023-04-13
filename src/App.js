@@ -8,6 +8,7 @@ import React, { useEffect } from 'react';
 function App() {
 	useEffect(() => {
 		document.title = 'Carleton Interdisciplinary Ethical AI Research';
+		document.body.style.backgroundColor = '#F0F9FF';
 	  }, []);
 	return (
 		<>		

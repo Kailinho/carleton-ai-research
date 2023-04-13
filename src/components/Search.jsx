@@ -5,9 +5,9 @@ const Search = (props) => {
 		props.onSearch(event.target.value)
 	}
 
-	return (
+	return (  
 		<>
-			<div className="py-2">
+			<div className="py-2 mb-4">
 				<h2 class="text-center text-3xl text-[#353535] font-semibold">
 					Meet our
 					<span class="text-[#3C6E71] font-bold "> Researchers</span>

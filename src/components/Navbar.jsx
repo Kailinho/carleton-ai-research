@@ -3,7 +3,6 @@
 import React from "react"
 import logo from "../assets/logo.png"
 import { useState } from "react";
-import ComingSoon from './ComingSoon'
 
 
 export default function NavBar() {

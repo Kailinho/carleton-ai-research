@@ -58,7 +58,12 @@ const Cards = () => {
 									</div>
 								</div>
 							</div>
-							))) : (null)}
+							))) : (
+
+									<>
+										<div className='h-[300px]'></div>
+									</>
+							)}
 					</div>
 				</section>
 			</div>
