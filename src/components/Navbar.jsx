@@ -81,7 +81,7 @@ export default function NavBar() {
                             </li>
                             <li >
                                 <a className="border-b-2 border-transparent hover:border-[#3C6E71]" 
-                                href="javascript:void(0)" onClick={() => alert("This page will be updated soon.")} >About</a>
+                                href="javascript:void(0)" onClick={() => alert("The search engine looks up the faculty members' research interests as appeared on their own website and is updated frequently.")} >About</a>
                             </li>
                         </ul>
                     </div>
