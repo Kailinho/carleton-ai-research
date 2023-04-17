@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react"
 import Search from "./Search"
-import Fuse from 'fuse.js';
 import getData from "../firebase"
 import profile from "../assets/profile.jpg"
 
@@ -24,12 +23,17 @@ const Cards = () => {
 		fetchData()
 	}, [])
 
-	const handleSearch = (searchString) => {
+	// This function will take the search string and filter the data based on the search string
+	const handleSearch = (searchString) => { 
+		// set the search string to the value the user has typed
 		setSearchString(searchString);
+		// filter the data based on the search string
 		const filtered = data.filter((item) => {
 		  return item.research_data && item.research_data.toLowerCase().includes(searchString.toLowerCase());
 		});
+		// set the filtered data to the state
 		setFilteredData(filtered);
+		// set the hasSearched state to true if the search string is not empty
 		searchString ? setHasSearched(true) : setHasSearched(false)
 	  }
 	  
@@ -59,7 +63,6 @@ const Cards = () => {
 								</div>
 							</div>
 							))) : (
-
 									<>
 										<div className='h-[300px]'></div>
 									</>

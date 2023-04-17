@@ -6,6 +6,7 @@ import { useState } from "react";
 
 
 export default function NavBar() {
+    //useState hook to toggle the navbar on mobile
     const [navbar, setNavbar] = useState(false);
 
     return (

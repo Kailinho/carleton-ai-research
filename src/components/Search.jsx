@@ -1,9 +1,11 @@
 import React from "react"
 
 const Search = (props) => {
+	 // The handleInputChange function is called when the user types in the search bar
 	const handleInputChange = (event) => {
-		props.onSearch(event.target.value)
-	}
+	// The onSearch function is called with the current value of the search bar as the argument
+	props.onSearch(event.target.value)
+}
 
 	return (  
 		<>
