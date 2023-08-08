@@ -4,7 +4,10 @@ const Search = (props) => {
 	 // The handleInputChange function is called when the user types in the search bar
 	const handleInputChange = (event) => {
 	// The onSearch function is called with the current value of the search bar as the argument
+	if(event.target.value)
+	// console.log(props)
 	props.onSearch(event.target.value)
+	
 }
 
 	return (  

@@ -4,8 +4,25 @@ import Search from "./Search"
 import getData from "../firebase"
 import profile from "../assets/profile.jpg"
 
+let searchResults = []
+const fetchSearchResults = async (searchValue) => {
+	try {
+		const result = await fetch(`https://semanticsearch-api.onrender.com/search/${searchValue}`, {
+									   mode: 'cors',
+									   headers: {'Content-Type': 'application/json'},})
+		const jsonResult = await result.json()
+		searchResults = jsonResult
+		return jsonResult
+		console.log(jsonResult)
+	} catch (error) {
+		console.error(error)
+	}
+}
+
+
 const Cards = () => {
 	const [data, setData] = useState(null)
+	const [searchData, setSearchData] = useState(null)
 	const [searchString, setSearchString] = useState("")
 	const [filteredData, setFilteredData] = useState([])
 	const [hasSearched, setHasSearched] = useState(false)
@@ -16,23 +33,59 @@ const Cards = () => {
 				const result = await getData("/")
 				setData(result)
 				setFilteredData(result)
+				console.log(result)
 			} catch (error) {
 				console.error(error)
 			}
 		}
+		
 		fetchData()
+		fetchSearchResults("machine learning")
 	}, [])
 
 	// This function will take the search string and filter the data based on the search string
 	const handleSearch = (searchString) => { 
+		const findMatch = (ele,name) => {
+			data.filter((ele) => {
+				return ele.name && ele.name.includes(name)
+			});
+		}
 		// set the search string to the value the user has typed
 		setSearchString(searchString);
-		// filter the data based on the search string
-		const filtered = data.filter((item) => {
-		  return item.research_data && item.research_data.toLowerCase().includes(searchString.toLowerCase());
-		});
-		// set the filtered data to the state
-		setFilteredData(filtered);
+		let numOfWords = searchString.split(" ").length
+		
+
+		// if the number of words is greater than 1 then use the NLP search technique
+		if(numOfWords > 1){
+			fetchSearchResults(searchString)
+			console.log(searchResults)
+			const filtered = data.filter((item) => {
+				let match = data.filter((item) => {
+					return item.name && item.name.includes(searchResults[0].name)
+				})
+				for(let i = 1; i < searchResults.length; i++){
+					match.push((data.filter((item) => {
+						return item.name && item.name.includes(searchResults[i].name)
+					}))[0])
+					console.log(match)
+					
+				};
+				return(match)
+				setFilteredData(match);
+			});
+
+			console.log(filtered)
+			
+			
+		}
+		else{
+			const filtered = data.filter((item) => {
+			return item.research_data && item.research_data.toLowerCase().includes(searchString);
+			});
+			console.log(filtered)
+			// set the filtered data to the state
+			setFilteredData(filtered);
+		}
 		// set the hasSearched state to true if the search string is not empty
 		searchString ? setHasSearched(true) : setHasSearched(false)
 	  }

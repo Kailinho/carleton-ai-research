@@ -43,5 +43,6 @@
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.3",
     "tailwindcss": "^3.2.6"
-  }
+  },
+  "proxy": "https://semanticsearch-api.onrender.com/"
 }
