@@ -45,18 +45,22 @@ const Cards = () => {
 
 	// This function will take the search string and filter the data based on the search string
 	const handleSearch = (searchString) => { 
-		const findMatch = (ele,name) => {
-			data.filter((ele) => {
-				return ele.name && ele.name.includes(name)
-			});
-		}
+		
+		// const findMatch = (ele,name) => {
+		// 	data.filter((ele) => {
+		// 		return ele.name && ele.name.includes(name)
+		// 	});
+		// }
 		// set the search string to the value the user has typed
 		setSearchString(searchString);
 		let numOfWords = searchString.split(" ").length
 		
-
-		// if the number of words is greater than 1 then use the NLP search technique
-		if(numOfWords > 1){
+		const exactMatch = data.filter((item) => {
+			return item.research_data && item.research_data.toLowerCase().includes(searchString);
+			});
+		// if the number of words is greater than 1 or exact match search yields a result
+		// less than 3, then use the semantic search technique.
+		if(numOfWords > 1 || exactMatch.length < 3){
 			fetchSearchResults(searchString)
 			console.log(searchResults)
 			let initFilitered = data.filter((item) => {
@@ -72,22 +76,6 @@ const Cards = () => {
 			console.log(initFilitered)
 			setFilteredData(initFilitered)
 
-			// const filtered = data.filter((item) => {
-			// 	let match = data.filter((item) => {
-			// 		return item.name && item.name.includes(searchResults[0].name)
-			// 	})
-			// 	for(let i = 1; i < searchResults.length; i++){
-			// 		match.push((data.filter((item) => {
-			// 			return item.name && item.name.includes(searchResults[i].name)
-			// 		}))[0])
-			// 		console.log(match)
-					
-			// 	};
-
-			// 	// MATCH IS PRINTING CORRECTLY Start here next time.
-			// 	return(match)
-			// 	setFilteredData(match);
-			// });
 
 			
 			
