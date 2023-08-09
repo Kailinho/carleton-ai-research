@@ -59,22 +59,36 @@ const Cards = () => {
 		if(numOfWords > 1){
 			fetchSearchResults(searchString)
 			console.log(searchResults)
-			const filtered = data.filter((item) => {
-				let match = data.filter((item) => {
-					return item.name && item.name.includes(searchResults[0].name)
-				})
-				for(let i = 1; i < searchResults.length; i++){
-					match.push((data.filter((item) => {
-						return item.name && item.name.includes(searchResults[i].name)
-					}))[0])
-					console.log(match)
-					
-				};
-				return(match)
-				setFilteredData(match);
-			});
+			let initFilitered = data.filter((item) => {
+				return item.name && item.name.includes(searchResults[0].name)
+			})
 
-			console.log(filtered)
+			for(let i = 1; i < searchResults.length; i++){
+				initFilitered.push((data.filter((item) =>{
+					return item.name && item.name.includes(searchResults[i].name)
+				}))[0])
+			}
+
+			console.log(initFilitered)
+			setFilteredData(initFilitered)
+
+			// const filtered = data.filter((item) => {
+			// 	let match = data.filter((item) => {
+			// 		return item.name && item.name.includes(searchResults[0].name)
+			// 	})
+			// 	for(let i = 1; i < searchResults.length; i++){
+			// 		match.push((data.filter((item) => {
+			// 			return item.name && item.name.includes(searchResults[i].name)
+			// 		}))[0])
+			// 		console.log(match)
+					
+			// 	};
+
+			// 	// MATCH IS PRINTING CORRECTLY Start here next time.
+			// 	return(match)
+			// 	setFilteredData(match);
+			// });
+
 			
 			
 		}
