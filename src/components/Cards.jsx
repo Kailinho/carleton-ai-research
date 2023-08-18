@@ -4,6 +4,25 @@ import Search from "./Search"
 import getData from "../firebase"
 import profile from "../assets/profile.jpg"
 
+function createBigrams(words) {
+	const bigrams = [];
+	for (let i = 0; i < words.length - 1; i++) {
+	  const bigram = `${words[i]} ${words[i + 1]}`;
+	  bigrams.push(bigram);
+	}
+	return bigrams;
+  }
+  
+  // Function to create trigrams from a list of words
+  function createTrigrams(words) {
+	const trigrams = [];
+	for (let i = 0; i < words.length - 2; i++) {
+	  const trigram = `${words[i]} ${words[i + 1]} ${words[i + 2]}`;
+	  trigrams.push(trigram);
+	}
+	return trigrams;
+  }
+
 let searchResults = []
 const fetchSearchResults = async (searchValue) => {
 	try {
@@ -13,7 +32,7 @@ const fetchSearchResults = async (searchValue) => {
 		const jsonResult = await result.json()
 		searchResults = jsonResult
 		return jsonResult
-		console.log(jsonResult)
+		
 	} catch (error) {
 		console.error(error)
 	}
@@ -46,48 +65,85 @@ const Cards = () => {
 	// This function will take the search string and filter the data based on the search string
 	const handleSearch = (searchString) => { 
 		
-		// const findMatch = (ele,name) => {
-		// 	data.filter((ele) => {
-		// 		return ele.name && ele.name.includes(name)
-		// 	});
-		// }
-		// set the search string to the value the user has typed
-		setSearchString(searchString);
-		let numOfWords = searchString.split(" ").length
 		
-		const exactMatch = data.filter((item) => {
-			return item.research_data && item.research_data.toLowerCase().includes(searchString);
-			});
-		// if the number of words is greater than 1 or exact match search yields a result
-		// less than 3, then use the semantic search technique.
-		if(numOfWords > 1 || exactMatch.length < 3){
-			fetchSearchResults(searchString)
-			console.log(searchResults)
-			let initFilitered = data.filter((item) => {
-				return item.name && item.name.includes(searchResults[0].name)
-			})
+		setSearchString(searchString);
+		
 
-			for(let i = 1; i < searchResults.length; i++){
-				initFilitered.push((data.filter((item) =>{
-					return item.name && item.name.includes(searchResults[i].name)
-				}))[0])
+		//tokenizes the search query and removes stop words 
+		const stopWords = ["a", "an", "and", "the", "of", "for", "in", "on", "with"];
+		const searchTokens = searchString
+			.toLowerCase()
+			.split(/\s+/)
+			.filter(token => !stopWords.includes(token));
+		
+		
+		fetchSearchResults(searchString)
+		
+
+		const filteredList = [];
+		const fullQueryMatches = [];
+		const bigramMatches = [];
+		const trigramMatches = [];
+
+		//for each item in our data, we perform our exact match, bi gram and trigram searches.
+		data.forEach((item) => {
+			const researchData = item.research_data ? item.research_data.toLowerCase() : '';
+		  
+			if (researchData.includes(searchString)) {
+			  fullQueryMatches.push(item);
+			} else {
+			  const bigrams = createBigrams(searchTokens);
+			  if (bigrams.some(bigram => researchData.includes(bigram))) {
+				bigramMatches.push(item);
+			  } else {
+				const trigrams = createTrigrams(searchTokens);
+				if (trigrams.some(trigram => researchData.includes(trigram))) {
+				  trigramMatches.push(item);
+				}
+			  }
 			}
+		  });
+		  
+		  // Build the final filtered list in the order of full query, bigram, and trigram matches
+		  filteredList.push(...fullQueryMatches);
+		  filteredList.push(...bigramMatches.filter(item => !fullQueryMatches.includes(item)));
+		  filteredList.push(...trigramMatches.filter(item => !fullQueryMatches.includes(item) && !bigramMatches.includes(item)));
+		  
+		  console.log(filteredList);
 
-			console.log(initFilitered)
-			setFilteredData(initFilitered)
+		let tempList = []
+		for(let i = 0; i < searchResults.length; i++){
+			tempList.push((data.filter((item) =>{
+				return item.name && item.name.includes(searchResults[i].name)
+			})))
+		}
+
+		for(let i = 0; i <tempList.length; i++){
+			filteredList.push(tempList[i][0])
+		}
+		
+		
+		// This last step here cleans up our filtered list and removes duplicate entries
+		const uniqueNames = new Map();
+		const uniqueMap = [];
+
+		for (const item of filteredList) {
+			const name = item.name;
+			if (!uniqueNames.has(name)) {
+				uniqueNames.set(name,true);
+				uniqueMap.push(item);
+			}
+		}
+		
+		console.log(filteredList);
+		console.log(uniqueMap);
+		setFilteredData(uniqueMap)
 
 
 			
 			
-		}
-		else{
-			const filtered = data.filter((item) => {
-			return item.research_data && item.research_data.toLowerCase().includes(searchString);
-			});
-			console.log(filtered)
-			// set the filtered data to the state
-			setFilteredData(filtered);
-		}
+		
+		
 		// set the hasSearched state to true if the search string is not empty
 		searchString ? setHasSearched(true) : setHasSearched(false)
 	  }
